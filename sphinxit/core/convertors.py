@@ -361,7 +361,7 @@ class OptionsCtx(CtxMixin):
             'sph04',
             'expr',
         )
-        if not ranker in valid_rankers:
+        if not (ranker in valid_rankers or ranker.startswith('expr')):
             return self.__exit__(
                 exc_val=SphinxQLSyntaxException(
                     '%s is unknown ranker. '
